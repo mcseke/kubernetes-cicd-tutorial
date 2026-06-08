@@ -28,6 +28,13 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
+      - name: Set proxy for build
+        run: |
+          export HTTP_PROXY=http://application-proxy.blackrock.com:9443
+          export HTTPS_PROXY=http://application-proxy.blackrock.com:9443
+          echo "Proxy set"
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
