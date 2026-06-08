@@ -31,8 +31,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          username: marton.cseke@gmail.com
-          password: ${{ secrets.DOCKER_SECRET }}
           context: .
           push: true
           tags: |
