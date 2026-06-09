@@ -23,9 +23,9 @@ jobs:
         with:
           driver: docker
 #        BlackRock version
-#          driver-opts: |
-#            env.http_proxy=http://application-proxy.blackrock.com:9443
-#            env.https_proxy=http://application-proxy.blackrock.com:9443
+          driver-opts: |
+            env.http_proxy=http://application-proxy.blackrock.com:9443
+            env.https_proxy=http://application-proxy.blackrock.com:9443
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
